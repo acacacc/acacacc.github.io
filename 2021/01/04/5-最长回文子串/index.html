@@ -6,16 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://acacacc.github.io">
-  <title>Tag: 关机重启命令 | acacacc</title>
+  <title>5-最长回文子串 | acacacc</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="acacacc">
-<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;tags&#x2F;%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4&#x2F;index.html">
+  <meta name="description" content="比较经典的题目，有多种方法求解">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5-最长回文子串">
+<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;04&#x2F;5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;index.html">
 <meta property="og:site_name" content="acacacc">
+<meta property="og:description" content="比较经典的题目，有多种方法求解">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;04&#x2F;5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;dp.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;04&#x2F;5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;dp2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;04&#x2F;5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;dp3.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;04&#x2F;5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;dp4.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;04&#x2F;5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;dp5.jpg">
+<meta property="og:updated_time" content="2021-01-05T06:24:29.244Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;04&#x2F;5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;dp.jpg">
   
     <link rel="alternative" href="/atom.xml" title="acacacc" type="application/atom+xml">
   
@@ -170,73 +180,259 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-5-最长回文子串" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/11/09/%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-        <time datetime="2019-11-09T11:09:39.832Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-09</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/11/09/%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4/" target="_blank">Linux的常用命令——关机重启命令</a>
   
+    <h1 class="article-title" itemprop="name">
+      5-最长回文子串
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="archive-article-date">
+        <time datetime="2021-01-04T10:17:50.237Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-04</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">657字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>比较经典的题目，有多种方法求解</p>
+<a id="more"></a>
+<p><a href="https://leetcode-cn.com/problems/longest-palindromic-substring/">https://leetcode-cn.com/problems/longest-palindromic-substring/</a></p>
+<h2 id="1-暴力解法"><a href="#1-暴力解法" class="headerlink" title="1.暴力解法"></a>1.暴力解法</h2><p>从头开始遍历，然后对每个字符串进行判断，代码较简单。时间复杂度O(n^3)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">inline bool isPalindrome(const string str) &#123;</span><br><span class="line">	int l = 0, r = str.size() - 1;</span><br><span class="line">	while (l &lt; r)</span><br><span class="line">		if (str[l++] != str[r--])</span><br><span class="line">			return false;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line">string longestPalindrome(string s) &#123;</span><br><span class="line">	int maxn = 1;</span><br><span class="line">	string ans;</span><br><span class="line">	ans += s[0];</span><br><span class="line">	for (int i = 0; i &lt; s.size(); i++) &#123;</span><br><span class="line">		for (int j = i; j &lt; s.size(); j++) &#123;</span><br><span class="line">			string temp = s.substr(i, j-i+1);</span><br><span class="line">			if (isPalindrome(temp)) &#123;</span><br><span class="line">				if (temp.size() &gt;= maxn) &#123;</span><br><span class="line">					ans = temp;</span><br><span class="line">					maxn = temp.size();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-中心扩散法"><a href="#2-中心扩散法" class="headerlink" title="2.中心扩散法"></a>2.中心扩散法</h2><p>顾名思义，从中心扩散寻找最长对称字符串，时间复杂度为O(n^2)</p>
+<p>因为不知道回文串是奇数还是偶数，所以有2(n-1)个中心</p>
+<p>如babad,先将b，ba作为中心扩散，b的回文串长度为1(只有b)，ba的回文串长度为0(本身不是回文串，不能向左扩散)</p>
+<p>然后将a,ab作为中心扩散，a的回文串长度为3(bab)，ab的回文串长度为0(本身不是回文串)</p>
+<p>然后将b,ba作为中心扩散，b的回文串长度为3(aba)，ba的回文串长度为0(本身不是回文串)</p>
+<p>最后将a,ad作为中心扩散，a的回文串长度为1(只有a),ad的回文串长度为0(本身不是回文串)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">string longestPalindrome(string s)&#123;</span><br><span class="line">	int start = 0, end = 0;</span><br><span class="line">	for (int i = 0; i &lt; s.size(); i++) &#123;</span><br><span class="line">		int len1 = expandAroundCenter(s, i, i);</span><br><span class="line">		int len2 = expandAroundCenter(s, i, i + 1);</span><br><span class="line">		int len = max(len1, len2);</span><br><span class="line">		if (len &gt; end - start) &#123;</span><br><span class="line">			start = i - (len - 1) / 2;</span><br><span class="line">			end = i + len / 2;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return s.substr(start, end - start + 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int expandAroundCenter(string s, int left, int right&#123;</span><br><span class="line">	while (left &gt;= 0 &amp;&amp; right &lt; s.size() &amp;&amp; s[left] == s[right]) &#123;</span><br><span class="line">		left--;</span><br><span class="line">		right++;</span><br><span class="line">	&#125;</span><br><span class="line">	return right - left - 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-动态规划"><a href="#3-动态规划" class="headerlink" title="3.动态规划"></a>3.动态规划</h2><p>简单来说就是空间换时间，时间复杂度为O(n^2)<br>首先单个字母一定是回文串，其次如果一个字符串是回文串，那么它left++，right–后也一定是一个回文串</p>
+<p>据此可写出状态转移方程P(i,j)=P(i+1,j−1)&amp;&amp;(S[i]==S[j])<br>填表例babad<br><img src="/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/dp.jpg" alt="dp"><br><img src="/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/dp2.jpg" alt="dp2"><br><img src="/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/dp3.jpg" alt="dp3"><br><img src="/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/dp4.jpg" alt="dp4"><br><img src="/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/dp5.jpg" alt="dp5"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">string longestPalindrome(string s) &#123;</span><br><span class="line">	int len = s.size();</span><br><span class="line">	bool dp[1010][1010] = &#123; 0 &#125;;</span><br><span class="line">	for (int i = 0; i &lt; len; i++)</span><br><span class="line">		dp[i][i] = true;</span><br><span class="line"></span><br><span class="line">	int maxn = 1;</span><br><span class="line">	int begin = 0;</span><br><span class="line">	for (int j = 1; j &lt; len; j++) &#123;</span><br><span class="line">		for (int i = 0; i &lt; j; i++) &#123;</span><br><span class="line">			if (s[i] != s[j])</span><br><span class="line">				dp[i][j] = false;</span><br><span class="line">			else &#123;</span><br><span class="line">				if (j - i &lt; 3)</span><br><span class="line">					dp[i][j] = true;</span><br><span class="line">				else</span><br><span class="line">					dp[i][j] = dp[i + 1][j - 1];</span><br><span class="line">			&#125;</span><br><span class="line">			if (j - i + 1 &gt; maxn &amp;&amp; dp[i][j]) &#123;</span><br><span class="line">				maxn = j - i + 1;</span><br><span class="line">				begin = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return s.substr(begin, maxn);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          acacacc
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://acacacc.github.io/2021/01/04/5-最长回文子串/" title="5-最长回文子串" target="_blank">https://acacacc.github.io/2021/01/04/5-最长回文子串/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">关机重启命令</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/02/239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">239-滑动窗口最大值</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-暴力解法"><span class="toc-number">1.</span> <span class="toc-text">1.暴力解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-中心扩散法"><span class="toc-number">2.</span> <span class="toc-text">2.中心扩散法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-动态规划"><span class="toc-number">3.</span> <span class="toc-text">3.动态规划</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -273,9 +469,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
