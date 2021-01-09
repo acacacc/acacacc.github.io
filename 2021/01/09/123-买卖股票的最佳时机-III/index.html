@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://acacacc.github.io">
-  <title>399-除法求值 | acacacc</title>
+  <title>123-买卖股票的最佳时机 III | acacacc</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="经典带权并查集">
-<meta name="keywords" content="LeetCode,并查集,DFS">
+  <meta name="description" content="动态规划求解，可以先做做之前的一、二再来看这道题">
+<meta name="keywords" content="dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="399-除法求值">
-<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;06&#x2F;399-%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC&#x2F;index.html">
+<meta property="og:title" content="123-买卖股票的最佳时机 III">
+<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;09&#x2F;123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III&#x2F;index.html">
 <meta property="og:site_name" content="acacacc">
-<meta property="og:description" content="经典带权并查集">
+<meta property="og:description" content="动态规划求解，可以先做做之前的一、二再来看这道题">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-01-06T12:12:40.146Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;09&#x2F;123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III&#x2F;dp.jpg">
+<meta property="og:updated_time" content="2021-01-09T11:41:08.292Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;09&#x2F;123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III&#x2F;dp.jpg">
   
     <link rel="alternative" href="/atom.xml" title="acacacc" type="application/atom+xml">
   
@@ -174,14 +176,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-399-除法求值" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-123-买卖股票的最佳时机-III" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      399-除法求值
+      123-买卖股票的最佳时机 III
     </h1>
   
 
@@ -193,8 +195,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2021/01/06/399-%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/" class="archive-article-date">
-        <time datetime="2021-01-06T07:57:12.783Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
+<a href="/2021/01/09/123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III/" class="archive-article-date">
+        <time datetime="2021-01-09T01:26:52.455Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-09</time>
 </a>
 
   
@@ -207,7 +209,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">387字</span>
+      <span class="post-count">388字</span>
     </span>
   </span>
 
@@ -216,7 +218,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -227,12 +229,16 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>经典带权并查集</p>
+    <p>动态规划求解，可以先做做之前的一、二再来看这道题</p>
 <a id="more"></a>
-<p><a href="https://leetcode-cn.com/problems/evaluate-division/">https://leetcode-cn.com/problems/evaluate-division/</a></p>
-<h2 id="1-带权并查集"><a href="#1-带权并查集" class="headerlink" title="1.带权并查集"></a>1.带权并查集</h2><p>关于并查集有许多写的非常好的文章，在此就不再赘述<br>一开始看到这道题思路就有问题，<br>如equations=[“a”,”b”][“b”,”c”]<br>values=[2.0,3.0]<br>queries=[“x”,”x”],[“ab”,”bc”]<br>ans=[-1.00000,-1.00000]<br>x/x不能输出1，ab/bc也不能计算出2.0/3.0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">int find(vector&lt;int&gt; &amp;f, vector&lt;double&gt; &amp;v, int x) &#123;</span><br><span class="line">	if (f[x] != x) &#123;</span><br><span class="line">		int temp = find(f, v, f[x]);</span><br><span class="line">		v[x] *= v[f[x]];</span><br><span class="line">		f[x] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	return f[x];</span><br><span class="line">&#125;</span><br><span class="line">void merge(vector&lt;int&gt; &amp;f, vector&lt;double&gt; &amp;v, int x, int y, double val) &#123;</span><br><span class="line">	int fx = find(f, v, x);</span><br><span class="line">	int fy = find(f, v, y);</span><br><span class="line">	f[fx] = f[fy];</span><br><span class="line">	v[fx] = val*v[y] / v[x];</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;double&gt; calcEquation(vector&lt;vector&lt;string&gt;&gt;&amp; equations, vector&lt;double&gt;&amp; values, vector&lt;vector&lt;string&gt;&gt;&amp; queries) &#123;</span><br><span class="line">	map&lt;string, int&gt; m;</span><br><span class="line">	int cnt = 0;</span><br><span class="line">	int len = equations.size();</span><br><span class="line">	for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">		if (m.find(equations[i][0]) == m.end())</span><br><span class="line">			m[equations[i][0]] = cnt++;</span><br><span class="line">		if (m.find(equations[i][1]) == m.end())</span><br><span class="line">			m[equations[i][1]] = cnt++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	vector&lt;int&gt; f(cnt);</span><br><span class="line">	vector&lt;double&gt; v(cnt, 1.0);</span><br><span class="line">	for (int i = 0; i &lt; f.size(); i++)</span><br><span class="line">		f[i] = i;</span><br><span class="line"></span><br><span class="line">	for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">		int indexa = m[equations[i][0]];</span><br><span class="line">		int indexb = m[equations[i][1]];</span><br><span class="line">		merge(f,v,indexa,indexb,values[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	vector&lt;double&gt; ans;</span><br><span class="line">	for (auto q : queries) &#123;</span><br><span class="line">		double result = -1.0;</span><br><span class="line">		if (m.find(q[0]) != m.end() &amp;&amp; m.find(q[1]) != m.end()) &#123;</span><br><span class="line">			int roota = m[q[0]];</span><br><span class="line">			int rootb = m[q[1]];</span><br><span class="line">			int fx = find(f, v, roota);</span><br><span class="line">			int fy = find(f, v, rootb);</span><br><span class="line">			if (fx == fy)</span><br><span class="line">				result = v[roota] / v[rootb];</span><br><span class="line">		&#125;</span><br><span class="line">		ans.push_back(result);</span><br><span class="line">	&#125;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-bfs"><a href="#2-bfs" class="headerlink" title="2.bfs"></a>2.bfs</h2><h2 id="3-floyd"><a href="#3-floyd" class="headerlink" title="3.floyd"></a>3.floyd</h2>
+<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/">https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/</a></p>
+<h2 id="1-简化版动态规划"><a href="#1-简化版动态规划" class="headerlink" title="1.简化版动态规划"></a>1.简化版动态规划</h2><p>最多能完成两笔交易，后面一次的交易必定受之前一次交易的影响，可以只完成一次交易，或者不交易</p>
+<p>一共有四种情况，firstbuy,firstsell,secondbuy,secondsell<br>firstbuy:对于firstbuy可以选择不买第i天，也可以选择买firstbuy=max(firstbuy, -prices[i])<br>firstsell:对于firstsell可以选择第i天卖出，也可选择不卖firstsell = max(firstsell, firstbuy + prices[i]);<br>secondbuy:对于secondbuy一定是在第一次卖出后抉择，可以买，或者不买，secondbuy = max(secondbuy, firstsell - prices[i]);<br>secondsell：对于secondbuy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int maxProfit(vector&lt;int&gt;&amp; prices) &#123;</span><br><span class="line">	int firstbuy = -prices[0], secondbuy = -prices[0];</span><br><span class="line">	int firstsell = 0, secondsell = 0;</span><br><span class="line">	for (int i = 1; i &lt; prices.size(); i++) &#123;</span><br><span class="line">		firstbuy = max(firstbuy, -prices[i]);</span><br><span class="line">		firstsell = max(firstsell, firstbuy + prices[i]);</span><br><span class="line">		secondbuy = max(secondbuy, firstsell - prices[i]);</span><br><span class="line">		secondsell = max(secondsell, secondbuy + prices[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return secondsell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-状态转移方程"><a href="#2-状态转移方程" class="headerlink" title="2.状态转移方程"></a>2.状态转移方程</h2><p>与上面类似，不过是用传统dp状态转移方程写出来的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int maxProfit(vector&lt;int&gt;&amp; prices) &#123;</span><br><span class="line">	if (prices.size() == 0) return 0;</span><br><span class="line">	vector&lt;vector&lt;int&gt;&gt; dp(prices.size(), vector&lt;int&gt;(5, 0));</span><br><span class="line">	dp[0][0] = 0;</span><br><span class="line">	dp[0][1] = -prices[0];</span><br><span class="line">	dp[0][3] = -prices[0];</span><br><span class="line">	for (int i = 1; i &lt; prices.size(); i++) &#123;</span><br><span class="line">		dp[i][0] = dp[i - 1][0];</span><br><span class="line">		dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]);</span><br><span class="line">		dp[i][2] = max(dp[i - 1][2], dp[i - 1][1] + prices[i]);</span><br><span class="line">		dp[i][3] = max(dp[i - 1][3], dp[i - 1][2] - prices[i]);</span><br><span class="line">		dp[i][4] = max(dp[i - 1][4], dp[i - 1][3] + prices[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return dp[prices.size() - 1][4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/09/123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III/dp.jpg" alt="dp"></p>
+
     
 
     
@@ -278,7 +284,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://acacacc.github.io/2021/01/06/399-除法求值/" title="399-除法求值" target="_blank">https://acacacc.github.io/2021/01/06/399-除法求值/</a>
+          <a href="https://acacacc.github.io/2021/01/09/123-买卖股票的最佳时机-III/" title="123-买卖股票的最佳时机 III" target="_blank">https://acacacc.github.io/2021/01/09/123-买卖股票的最佳时机-III/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -297,15 +303,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">并查集</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
         		</li>
       		
 		</ul>
@@ -361,7 +359,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2021/01/06/399-%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2021/01/09/123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -376,18 +374,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/01/07/547-%E7%9C%81%E4%BB%BD%E6%95%B0%E9%87%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          547-省份数量
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/04/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">5-最长回文子串</div>
+    <a href="/2021/01/07/547-%E7%9C%81%E4%BB%BD%E6%95%B0%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">547-省份数量</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -414,7 +403,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-带权并查集"><span class="toc-number">1.</span> <span class="toc-text">1.带权并查集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-bfs"><span class="toc-number">2.</span> <span class="toc-text">2.bfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-floyd"><span class="toc-number">3.</span> <span class="toc-text">3.floyd</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简化版动态规划"><span class="toc-number">1.</span> <span class="toc-text">1.简化版动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-状态转移方程"><span class="toc-number">2.</span> <span class="toc-text">2.状态转移方程</span></a></li></ol>
                     </div>
                 </span>
             </div>
