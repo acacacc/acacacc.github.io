@@ -19,7 +19,7 @@
 <meta property="og:description" content="动态规划求解，可以先做做之前的一、二再来看这道题">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;09&#x2F;123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III&#x2F;dp.jpg">
-<meta property="og:updated_time" content="2021-01-09T11:41:08.292Z">
+<meta property="og:updated_time" content="2021-01-09T13:57:30.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;09&#x2F;123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III&#x2F;dp.jpg">
   
@@ -209,7 +209,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">388字</span>
+      <span class="post-count">406字</span>
     </span>
   </span>
 
@@ -218,7 +218,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -233,7 +233,7 @@
 <a id="more"></a>
 <p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/">https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/</a></p>
 <h2 id="1-简化版动态规划"><a href="#1-简化版动态规划" class="headerlink" title="1.简化版动态规划"></a>1.简化版动态规划</h2><p>最多能完成两笔交易，后面一次的交易必定受之前一次交易的影响，可以只完成一次交易，或者不交易</p>
-<p>一共有四种情况，firstbuy,firstsell,secondbuy,secondsell<br>firstbuy:对于firstbuy可以选择不买第i天，也可以选择买firstbuy=max(firstbuy, -prices[i])<br>firstsell:对于firstsell可以选择第i天卖出，也可选择不卖firstsell = max(firstsell, firstbuy + prices[i]);<br>secondbuy:对于secondbuy一定是在第一次卖出后抉择，可以买，或者不买，secondbuy = max(secondbuy, firstsell - prices[i]);<br>secondsell：对于secondbuy</p>
+<p>一共有四种情况，firstbuy,firstsell,secondbuy,secondsell<br>firstbuy:对于firstbuy可以选择不买第i天，也可以选择买firstbuy=max(firstbuy, -prices[i])<br>firstsell:对于firstsell可以选择第i天卖出，也可选择不卖firstsell = max(firstsell, firstbuy + prices[i]);<br>secondbuy:对于secondbuy一定是在第一次卖出后抉择，可以买，或者不买，secondbuy = max(secondbuy, firstsell - prices[i]);<br>secondsell：对于secondbuy，是在第二次买入之后才卖出，secondsell = max(secondsell, secondbuy + prices[i]);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int maxProfit(vector&lt;int&gt;&amp; prices) &#123;</span><br><span class="line">	int firstbuy = -prices[0], secondbuy = -prices[0];</span><br><span class="line">	int firstsell = 0, secondsell = 0;</span><br><span class="line">	for (int i = 1; i &lt; prices.size(); i++) &#123;</span><br><span class="line">		firstbuy = max(firstbuy, -prices[i]);</span><br><span class="line">		firstsell = max(firstsell, firstbuy + prices[i]);</span><br><span class="line">		secondbuy = max(secondbuy, firstsell - prices[i]);</span><br><span class="line">		secondsell = max(secondsell, secondbuy + prices[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return secondsell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="2-状态转移方程"><a href="#2-状态转移方程" class="headerlink" title="2.状态转移方程"></a>2.状态转移方程</h2><p>与上面类似，不过是用传统dp状态转移方程写出来的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int maxProfit(vector&lt;int&gt;&amp; prices) &#123;</span><br><span class="line">	if (prices.size() == 0) return 0;</span><br><span class="line">	vector&lt;vector&lt;int&gt;&gt; dp(prices.size(), vector&lt;int&gt;(5, 0));</span><br><span class="line">	dp[0][0] = 0;</span><br><span class="line">	dp[0][1] = -prices[0];</span><br><span class="line">	dp[0][3] = -prices[0];</span><br><span class="line">	for (int i = 1; i &lt; prices.size(); i++) &#123;</span><br><span class="line">		dp[i][0] = dp[i - 1][0];</span><br><span class="line">		dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]);</span><br><span class="line">		dp[i][2] = max(dp[i - 1][2], dp[i - 1][1] + prices[i]);</span><br><span class="line">		dp[i][3] = max(dp[i - 1][3], dp[i - 1][2] - prices[i]);</span><br><span class="line">		dp[i][4] = max(dp[i - 1][4], dp[i - 1][3] + prices[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return dp[prices.size() - 1][4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -373,6 +373,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2021/01/10/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          22-括号生成
+        
+      </div>
+    </a>
   
   
     <a href="/2021/01/07/547-%E7%9C%81%E4%BB%BD%E6%95%B0%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
@@ -547,11 +556,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +568,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">软件包管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +584,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">关机重启命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,6 +600,26 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模板</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">关机重启命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">压缩解压命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">命令行</a>
               </li>
              
@@ -599,7 +632,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">软件包管理</a>
+                <a href="javascript:void(0)" class="js-tag color2">文件处理命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,11 +640,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">文件处理命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+                <a href="javascript:void(0)" class="js-tag color2">权限管理命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,23 +648,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">权限管理命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">压缩解压命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模板</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://acacacc.github.io">
-  <title>Linux的常用命令——用户管理命令 | acacacc</title>
+  <title>22-括号生成 | acacacc</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="相对简单">
-<meta name="keywords" content="Linux,用户管理命令">
+  <meta name="description" content="对递归的应用">
+<meta name="keywords" content="递归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux的常用命令——用户管理命令">
-<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2019&#x2F;11&#x2F;09&#x2F;%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4&#x2F;index.html">
+<meta property="og:title" content="22-括号生成">
+<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;10&#x2F;22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90&#x2F;index.html">
 <meta property="og:site_name" content="acacacc">
-<meta property="og:description" content="相对简单">
+<meta property="og:description" content="对递归的应用">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-09T11:40:10.876Z">
+<meta property="og:updated_time" content="2021-01-10T04:25:56.458Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="acacacc" type="application/atom+xml">
@@ -174,14 +174,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-用户管理命令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-22-括号生成" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Linux的常用命令——用户管理命令
+      22-括号生成
     </h1>
   
 
@@ -193,8 +193,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/11/09/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-        <time datetime="2019-11-09T07:00:59.368Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-09</time>
+<a href="/2021/01/10/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/" class="archive-article-date">
+        <time datetime="2021-01-10T00:59:03.593Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
 </a>
 
   
@@ -207,7 +207,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">180字</span>
+      <span class="post-count">538字</span>
     </span>
   </span>
 
@@ -216,7 +216,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -227,17 +227,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>相对简单</p>
+    <p>对递归的应用</p>
 <a id="more"></a>
-<h2 id="useradd-添加新用户"><a href="#useradd-添加新用户" class="headerlink" title="useradd 添加新用户"></a>useradd 添加新用户</h2><p>语法: useradd 用户名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: useradd qzx</span><br></pre></td></tr></table></figure>
-<h2 id="passwd-更改密码"><a href="#passwd-更改密码" class="headerlink" title="passwd 更改密码"></a>passwd 更改密码</h2><p>语法: passwd 密码<br>root 可以改所有人密码，用户只能改自己的  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: passwd qzx</span><br></pre></td></tr></table></figure>
-<h2 id="who-查看当前登录信息（简略）"><a href="#who-查看当前登录信息（简略）" class="headerlink" title="who 查看当前登录信息（简略）"></a>who 查看当前登录信息（简略）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: who</span><br></pre></td></tr></table></figure>
-<p>登录用户名    登录终端（tty本地终端 pts远程终端）    登录时间    ip地址</p>
-<h2 id="w-查看当前登录信息（详细）"><a href="#w-查看当前登录信息（详细）" class="headerlink" title="w 查看当前登录信息（详细）"></a>w 查看当前登录信息（详细）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: w</span><br></pre></td></tr></table></figure>
-<p>当前系统时间    Linux连续运行时间    当前用户数    负载均衡指数<br>登录用户名 登录终端（tty本地终端 pts远程终端）    ip地址    登录时间    空闲时间    累计占用时间    当前执行命令占用cpu时间    当前执行什么操作  </p>
-
+<p><a href="https://leetcode-cn.com/problems/generate-parentheses/">https://leetcode-cn.com/problems/generate-parentheses/</a><br>写递归时需要思考的几个问题：<br>（1）什么时候作为结束条件， 也就是不再继续递归下去<br>（2）如何递归，如何改变当前的情况，对这一情况递归后需要恢复到原来的状态</p>
+<h2 id="1-暴力"><a href="#1-暴力" class="headerlink" title="1.暴力"></a>1.暴力</h2><p>简单来说就是暴力递归出所有可能的情况，然后筛选出满足条件的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">bool valid(string temp) &#123;</span><br><span class="line">	int n = 0;</span><br><span class="line">	for (int i = 0; i &lt; temp.size(); i++) &#123;</span><br><span class="line">		if (temp[i] == &apos;(&apos;)n++;</span><br><span class="line">		else n--;</span><br><span class="line">		if (n &lt; 0)</span><br><span class="line">			return false;</span><br><span class="line">	&#125;</span><br><span class="line">	return (n == 0);</span><br><span class="line">&#125;</span><br><span class="line">void dfs(vector&lt;string&gt; &amp;ans, string temp, int len) &#123;</span><br><span class="line">	if (temp.size() == 2 * len) &#123;</span><br><span class="line">		if (valid(temp))</span><br><span class="line">			ans.push_back(temp);</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">		temp += &quot;(&quot;;</span><br><span class="line">		dfs(ans, temp, len);</span><br><span class="line">		temp.pop_back();</span><br><span class="line">		temp += &quot;)&quot;;</span><br><span class="line">		dfs(ans, temp, len);</span><br><span class="line">		temp.pop_back();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;string&gt; generateParenthesis(int n) &#123;</span><br><span class="line">	vector&lt;string&gt; ans;</span><br><span class="line">	string temp = &quot;&quot;;</span><br><span class="line">	dfs(ans, temp, n);</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-dfs剪枝"><a href="#2-dfs剪枝" class="headerlink" title="2.dfs剪枝"></a>2.dfs剪枝</h2><p>上面的情况是每次整个字符串生成后再对其进行判断，时间复杂度很高，我们可以直接在每次加括号的时候就进行判断，这样直接不会生成不满足条件的字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">void getall(vector&lt;string&gt; &amp;ans, string temp, int n, int left, int right) </span><br><span class="line">	if (temp.size() == 2 * n) &#123;</span><br><span class="line">		ans.push_back(temp);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	if (left &lt; n) &#123;</span><br><span class="line">		temp += &apos;(&apos;;</span><br><span class="line">		getall(ans, temp, n, left + 1, right);</span><br><span class="line">		temp.pop_back();</span><br><span class="line">	&#125;</span><br><span class="line">	if(right&lt;left) &#123;</span><br><span class="line">		temp += &apos;)&apos;;</span><br><span class="line">		getall(ans, temp, n, left, right + 1);</span><br><span class="line">		temp.pop_back();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;string&gt; generateParenthesis(int n) &#123;</span><br><span class="line">	vector&lt;string&gt; ans;</span><br><span class="line">	string temp;</span><br><span class="line">	getall(ans, temp, n, 0, 0);</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-bfs"><a href="#3-bfs" class="headerlink" title="3.bfs"></a>3.bfs</h2><p>使用pair存储左括号与右括号的数量，第一个string类型存储当前字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;string&gt; generateParenthesis(int n) &#123;</span><br><span class="line">	vector&lt;string&gt; ans;</span><br><span class="line">	queue&lt;pair&lt;string, pair&lt;int, int&gt;&gt;&gt; q;</span><br><span class="line">	q.push(&#123; &quot;&quot;,&#123;n,n&#125; &#125;);</span><br><span class="line">	while (!q.empty()) &#123;</span><br><span class="line">		pair&lt;string, pair&lt;int, int&gt;&gt; now = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		if (now.second.first == 0 &amp;&amp; now.second.second == 0)</span><br><span class="line">			ans.push_back(now.first);</span><br><span class="line">		if (now.second.first &gt; 0)</span><br><span class="line">			q.push(&#123; now.first + &quot;(&quot;,&#123;now.second.first - 1,now.second.second&#125; &#125;);</span><br><span class="line">		if (now.second.second &gt; 0 &amp;&amp; now.second.second &gt; now.second.first)</span><br><span class="line">			q.push(&#123; now.first + &quot;)&quot;,&#123;now.second.first,now.second.second - 1&#125; &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -283,7 +281,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://acacacc.github.io/2019/11/09/用户管理命令/" title="Linux的常用命令——用户管理命令" target="_blank">https://acacacc.github.io/2019/11/09/用户管理命令/</a>
+          <a href="https://acacacc.github.io/2021/01/10/22-括号生成/" title="22-括号生成" target="_blank">https://acacacc.github.io/2021/01/10/22-括号生成/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -302,11 +300,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">用户管理命令</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
         		</li>
       		
 		</ul>
@@ -362,7 +356,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2019/11/09/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2021/01/10/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -377,18 +371,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/09/%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Linux的常用命令——压缩解压命令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/09/%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux的常见命令——帮助命令</div>
+    <a href="/2021/01/09/123-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-III/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">123-买卖股票的最佳时机 III</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -415,7 +400,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#useradd-添加新用户"><span class="toc-number">1.</span> <span class="toc-text">useradd 添加新用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#passwd-更改密码"><span class="toc-number">2.</span> <span class="toc-text">passwd 更改密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#who-查看当前登录信息（简略）"><span class="toc-number">3.</span> <span class="toc-text">who 查看当前登录信息（简略）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#w-查看当前登录信息（详细）"><span class="toc-number">4.</span> <span class="toc-text">w 查看当前登录信息（详细）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-暴力"><span class="toc-number">1.</span> <span class="toc-text">1.暴力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-dfs剪枝"><span class="toc-number">2.</span> <span class="toc-text">2.dfs剪枝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-bfs"><span class="toc-number">3.</span> <span class="toc-text">3.bfs</span></a></li></ol>
                     </div>
                 </span>
             </div>
