@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://acacacc.github.io">
-  <title>软件包管理 | acacacc</title>
+  <title>39-组合总和 | acacacc</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="源码包与RPM包的区别大多数RPM包默认安装路径&#x2F;etc&#x2F;    配置文件安装目录&#x2F;user&#x2F;bin&#x2F;    可执行的命令安装目录&#x2F;user&#x2F;lib&#x2F;    程序所使用的函数库保存位置&#x2F;usr&#x2F;share&#x2F;doc&#x2F;    基本的软件使用手册保存位置&#x2F;usr&#x2F;share&#x2F;man&#x2F;    帮助文件保存位置">
-<meta name="keywords" content="软件包管理,Linux">
+  <meta name="description" content="这道题与之前的78题类似，都是求子集，但是这道题的一个元素可以被取多次">
+<meta name="keywords" content="dfs,LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件包管理">
-<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2019&#x2F;11&#x2F;17&#x2F;%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86&#x2F;index.html">
+<meta property="og:title" content="39-组合总和">
+<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;13&#x2F;39-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C&#x2F;index.html">
 <meta property="og:site_name" content="acacacc">
-<meta property="og:description" content="源码包与RPM包的区别大多数RPM包默认安装路径&#x2F;etc&#x2F;    配置文件安装目录&#x2F;user&#x2F;bin&#x2F;    可执行的命令安装目录&#x2F;user&#x2F;lib&#x2F;    程序所使用的函数库保存位置&#x2F;usr&#x2F;share&#x2F;doc&#x2F;    基本的软件使用手册保存位置&#x2F;usr&#x2F;share&#x2F;man&#x2F;    帮助文件保存位置">
+<meta property="og:description" content="这道题与之前的78题类似，都是求子集，但是这道题的一个元素可以被取多次">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-31T04:51:24.987Z">
+<meta property="og:updated_time" content="2021-01-13T12:05:42.148Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="acacacc" type="application/atom+xml">
@@ -174,14 +174,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-软件包管理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-39-组合总和" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      软件包管理
+      39-组合总和
     </h1>
   
 
@@ -193,8 +193,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/11/17/%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/" class="archive-article-date">
-        <time datetime="2019-11-17T04:55:20.780Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+<a href="/2021/01/13/39-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="archive-article-date">
+        <time datetime="2021-01-13T11:19:26.923Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-13</time>
 </a>
 
   
@@ -207,7 +207,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">263字</span>
+      <span class="post-count">422字</span>
     </span>
   </span>
 
@@ -216,7 +216,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -227,14 +227,13 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="源码包与RPM包的区别"><a href="#源码包与RPM包的区别" class="headerlink" title="源码包与RPM包的区别"></a>源码包与RPM包的区别</h2><p>大多数RPM包默认安装路径<br>/etc/    配置文件安装目录<br>/user/bin/    可执行的命令安装目录<br>/user/lib/    程序所使用的函数库保存位置<br>/usr/share/doc/    基本的软件使用手册保存位置<br>/usr/share/man/    帮助文件保存位置</p>
+    <p>这道题与之前的78题类似，都是求子集，但是这道题的一个元素可以被取多次</p>
 <a id="more"></a>
-<p>大多数源码包安装位置<br>/usr/local/软件名<br>RPM包安装的服务可以使用系统服务管理命令来管理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eg: /etc/rc.d/init.d/httpd start</span><br><span class="line">    service httpd start</span><br></pre></td></tr></table></figure>
-<p>源码包安装的服务则不能被服务管理命令管理，因为没有安装到默认路径中。所以只能用绝对路径进行服务的管理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: /usr/local/apache/bin/apachectl start</span><br></pre></td></tr></table></figure>
-<p>##源码包的安装过程<br>默认源码保存位置：/usr/local/src/<br>默认软件安装位置：/usr/local/<br>当安装过程停止并出现error，warning或no的提示时说明安装过程报错<br>1.下载源码包<br>2.解压压缩下载的源码包<br>3.进入解压缩目录  </p>
-
+<p><a href="https://leetcode-cn.com/problems/combination-sum/">https://leetcode-cn.com/problems/combination-sum/</a><br>首先这道题目给出的元素是无重复，并且可以无限制选取，元素与target均为正数</p>
+<h2 id="1-dfs"><a href="#1-dfs" class="headerlink" title="1.dfs"></a>1.dfs</h2><p>首先是两个递归判断条件，当总和达到target时或者大于target时结束递归<br>因为可以无限制选取，所以这里选择用循环，每次dfs里的最后 一个参数保持不变，从而实现多次选取<br>sum+candidates[i]实现和的改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void dfs(vector&lt;vector&lt;int&gt;&gt; &amp;ans,vector&lt;int&gt; &amp;now,vector&lt;int&gt;&amp; candidates,int sum,int target,int index) &#123;</span><br><span class="line">	if (sum == target) &#123;</span><br><span class="line">		ans.emplace_back(now);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	if (sum&gt;target)</span><br><span class="line">		return;</span><br><span class="line">	for (int i = index; i &lt; candidates.size(); ++i) &#123;</span><br><span class="line">		now.emplace_back(candidates[i]);</span><br><span class="line">		dfs(ans, now, candidates, sum + candidates[i], target, i);</span><br><span class="line">		now.pop_back();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) &#123;</span><br><span class="line">	vector&lt;vector&lt;int&gt;&gt; ans;</span><br><span class="line">	vector&lt;int&gt; now;</span><br><span class="line">	dfs(ans,now,candidates,0,target,0);</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-dfs剪枝"><a href="#2-dfs剪枝" class="headerlink" title="2.dfs剪枝"></a>2.dfs剪枝</h2><p>这道题剪枝与不剪枝时间差别很大<br>首先要对candidates进行排序<br>在for循环里就可以对sum+candidates[i]与target进行比较</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void dfs(vector&lt;vector&lt;int&gt;&gt; &amp;ans, vector&lt;int&gt; &amp;now, vector&lt;int&gt;&amp; candidates, int sum, int target, int index) &#123;</span><br><span class="line">	if (sum == target) &#123;</span><br><span class="line">		ans.emplace_back(now);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = index; i &lt; candidates.size() &amp;&amp; sum + candidates[i] &lt;= target; ++i) &#123;</span><br><span class="line">		now.emplace_back(candidates[i]);</span><br><span class="line">		dfs(ans, now, candidates, sum + candidates[i], target, i);</span><br><span class="line">		now.pop_back();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) &#123;</span><br><span class="line">	vector&lt;vector&lt;int&gt;&gt; ans;</span><br><span class="line">	vector&lt;int&gt; now;</span><br><span class="line">	sort(candidates.begin(), candidates.end());</span><br><span class="line">	dfs(ans, now, candidates, 0, target, 0);</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -280,7 +279,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://acacacc.github.io/2019/11/17/软件包管理/" title="软件包管理" target="_blank">https://acacacc.github.io/2019/11/17/软件包管理/</a>
+          <a href="https://acacacc.github.io/2021/01/13/39-组合总和/" title="39-组合总和" target="_blank">https://acacacc.github.io/2021/01/13/39-组合总和/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -299,11 +298,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">软件包管理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dfs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		
 		</ul>
@@ -359,7 +358,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2019/11/17/%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2021/01/13/39-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -374,18 +373,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/01/31/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91cpp/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          命令行编译c++
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/10/RPM%E5%8C%85%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RPM包管理</div>
+    <a href="/2021/01/13/78-%E5%AD%90%E9%9B%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">78-子集</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -412,7 +402,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#源码包与RPM包的区别"><span class="toc-number">1.</span> <span class="toc-text">源码包与RPM包的区别</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-dfs"><span class="toc-number">1.</span> <span class="toc-text">1.dfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-dfs剪枝"><span class="toc-number">2.</span> <span class="toc-text">2.dfs剪枝</span></a></li></ol>
                     </div>
                 </span>
             </div>
