@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://acacacc.github.io">
-  <title>命令行编译c++ | acacacc</title>
+  <title>947-移除最多的同行或同列石头 | acacacc</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="在网上找了一些方法，但是缺少文件，改了以后也没有成功，然后好不容易找到一个可行的方案">
-<meta name="keywords" content="命令行,C++">
+  <meta name="description" content="看到这道题最先想到的是bfs，但是用并查集来做会好很多">
+<meta name="keywords" content="LeetCode,并查集,bfs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="命令行编译c++">
-<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2020&#x2F;01&#x2F;31&#x2F;%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91cpp&#x2F;index.html">
+<meta property="og:title" content="947-移除最多的同行或同列石头">
+<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;15&#x2F;947-%E7%A7%BB%E9%99%A4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%90%8C%E8%A1%8C%E6%88%96%E5%90%8C%E5%88%97%E7%9F%B3%E5%A4%B4&#x2F;index.html">
 <meta property="og:site_name" content="acacacc">
-<meta property="og:description" content="在网上找了一些方法，但是缺少文件，改了以后也没有成功，然后好不容易找到一个可行的方案">
+<meta property="og:description" content="看到这道题最先想到的是bfs，但是用并查集来做会好很多">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-01-02T13:56:23.313Z">
+<meta property="og:updated_time" content="2021-01-15T12:21:28.595Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="acacacc" type="application/atom+xml">
@@ -174,14 +174,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-命令行编译cpp" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-947-移除最多的同行或同列石头" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      命令行编译c++
+      947-移除最多的同行或同列石头
     </h1>
   
 
@@ -193,8 +193,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/01/31/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91cpp/" class="archive-article-date">
-        <time datetime="2020-01-31T04:08:37.150Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
+<a href="/2021/01/15/947-%E7%A7%BB%E9%99%A4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%90%8C%E8%A1%8C%E6%88%96%E5%90%8C%E5%88%97%E7%9F%B3%E5%A4%B4/" class="archive-article-date">
+        <time datetime="2021-01-15T10:05:23.961Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-15</time>
 </a>
 
   
@@ -207,7 +207,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">211字</span>
+      <span class="post-count">375字</span>
     </span>
   </span>
 
@@ -216,7 +216,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -227,11 +227,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>在网上找了一些方法，但是缺少文件，改了以后也没有成功，然后好不容易找到一个可行的方案  </p>
+    <p>看到这道题最先想到的是bfs，但是用并查集来做会好很多</p>
 <a id="more"></a>
-<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><p>一般的C/C++程序开发经历三个过程：源代码的编辑——编译生成.obj文件——链接生成.exe文件<br>我是vs2015，首先要找到安装vs目录下VC这个文件夹，然后找到bin这个文件夹（其他编译器<br>基本也是找到这个bin文件夹）,复制路径“F:/vs2015/vc/bin”，添加到环境变量中，然后在cmd中<br>输入cl看看是否在环境变量中成功添加路径，没报错就成功了  </p>
-<h2 id="程序调试"><a href="#程序调试" class="headerlink" title="程序调试"></a>程序调试</h2><p>打开cmd，输入vcvars32.bat<br>cd到你需要编译的cpp文件目录然后cl -EHsc test.cpp就成功了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: F:/vscode/text/text/cl -EHsc test.cpp</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/">https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/</a></p>
+<h2 id="1-bfs"><a href="#1-bfs" class="headerlink" title="1.bfs"></a>1.bfs</h2><p>bfs就直接从二维数组第一个开始遍历，然后每次将改行和列的所有元素加入队列中，加入后将这组数标记</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">int removeStones(vector&lt;vector&lt;int&gt;&gt;&amp; stones)&#123;</span><br><span class="line">	int len = stones.size();</span><br><span class="line">	int cnt = 0;</span><br><span class="line">	vector&lt;bool&gt; vis(len);</span><br><span class="line">	queue&lt;vector&lt;int&gt;&gt; q;</span><br><span class="line">	for (int i = 0; i &lt; len; ++i) &#123;</span><br><span class="line">		if (!vis[i]) &#123;</span><br><span class="line">			q.push(stones[i]);</span><br><span class="line">			vis[i] = 1;</span><br><span class="line">			while (!q.empty()) &#123;</span><br><span class="line">				auto now = q.front();</span><br><span class="line">				q.pop();</span><br><span class="line">				for (int j = 0; j &lt; len; ++j) &#123;</span><br><span class="line">					if (!vis[j] &amp;&amp; (now[0] == stones[j][0] || now[1] == stones[j][1])) &#123;</span><br><span class="line">						q.push(stones[j]);</span><br><span class="line">						vis[j] = 1;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			++cnt;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return len - cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-并查集"><a href="#2-并查集" class="headerlink" title="2.并查集"></a>2.并查集</h2><p>这道题的最佳解法应该就是并查集了,这里的做法还可以做许多优化，比如按秩合并，或将二维数组转成一维</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">int find(vector&lt;int&gt; &amp;f, int x) &#123;</span><br><span class="line">	if (f[x] != x) &#123;</span><br><span class="line">		f[x] = find(f, f[x]);</span><br><span class="line">	&#125;</span><br><span class="line">	return f[x];</span><br><span class="line">&#125;</span><br><span class="line">void merge(vector&lt;int&gt; &amp;f, int x, int y, int &amp;cnt) &#123;</span><br><span class="line">	int fx = find(f, x);</span><br><span class="line">	int fy = find(f, y);</span><br><span class="line">	f[fx] = fy;</span><br><span class="line">	if (fx != fy)</span><br><span class="line">		cnt++;</span><br><span class="line">&#125;</span><br><span class="line">int removeStones(vector&lt;vector&lt;int&gt;&gt;&amp; stones) &#123;</span><br><span class="line">	int len = stones.size();</span><br><span class="line">	vector&lt;int&gt; f(len);</span><br><span class="line">	for (int i = 0; i &lt; len; ++i)</span><br><span class="line">		f[i] = i;</span><br><span class="line"></span><br><span class="line">	int cnt = 0;</span><br><span class="line">	for (int i = 0; i &lt; len; ++i) &#123;</span><br><span class="line">		for (int j = i + 1; j &lt; len; ++j) &#123;</span><br><span class="line">			if (stones[i][0] == stones[j][0] || stones[i][1] == stones[j][1])</span><br><span class="line">				merge(f, i, j, cnt);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     
 
     
@@ -277,7 +280,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://acacacc.github.io/2020/01/31/命令行编译cpp/" title="命令行编译c++" target="_blank">https://acacacc.github.io/2020/01/31/命令行编译cpp/</a>
+          <a href="https://acacacc.github.io/2021/01/15/947-移除最多的同行或同列石头/" title="947-移除最多的同行或同列石头" target="_blank">https://acacacc.github.io/2021/01/15/947-移除最多的同行或同列石头/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -296,11 +299,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">命令行</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">并查集</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bfs</a>
         		</li>
       		
 		</ul>
@@ -356,7 +363,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2020/01/31/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91cpp/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2021/01/15/947-%E7%A7%BB%E9%99%A4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%90%8C%E8%A1%8C%E6%88%96%E5%90%8C%E5%88%97%E7%9F%B3%E5%A4%B4/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -371,18 +378,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/10/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%80%92%E5%BD%92%EF%BC%8C%E8%BF%AD%E4%BB%A3%E6%A8%A1%E6%9D%BF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          二叉树递归，迭代模板
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">软件包管理</div>
+    <a href="/2021/01/13/39-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">39-组合总和</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -409,7 +407,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置环境变量"><span class="toc-number">1.</span> <span class="toc-text">设置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序调试"><span class="toc-number">2.</span> <span class="toc-text">程序调试</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-bfs"><span class="toc-number">1.</span> <span class="toc-text">1.bfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-并查集"><span class="toc-number">2.</span> <span class="toc-text">2.并查集</span></a></li></ol>
                     </div>
                 </span>
             </div>
