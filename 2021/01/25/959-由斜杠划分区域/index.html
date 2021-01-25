@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://acacacc.github.io">
-  <title>二叉树递归，迭代模板 | acacacc</title>
+  <title>959-由斜杠划分区域 | acacacc</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="简单记录二叉树">
-<meta name="keywords" content="二叉树,模板">
+  <meta name="description" content="做这道题之前可以先看看第200题，这道题多了一个建图的步骤">
+<meta name="keywords" content="LeetCode,dfs,建图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树递归，迭代模板">
-<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2020&#x2F;10&#x2F;29&#x2F;%E4%BA%8C%E5%8F%89%E6%A0%91%E9%80%92%E5%BD%92%EF%BC%8C%E8%BF%AD%E4%BB%A3%E6%A8%A1%E6%9D%BF&#x2F;index.html">
+<meta property="og:title" content="959-由斜杠划分区域">
+<meta property="og:url" content="https:&#x2F;&#x2F;acacacc.github.io&#x2F;2021&#x2F;01&#x2F;25&#x2F;959-%E7%94%B1%E6%96%9C%E6%9D%A0%E5%88%92%E5%88%86%E5%8C%BA%E5%9F%9F&#x2F;index.html">
 <meta property="og:site_name" content="acacacc">
-<meta property="og:description" content="简单记录二叉树">
+<meta property="og:description" content="做这道题之前可以先看看第200题，这道题多了一个建图的步骤">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-10-29T12:31:48.629Z">
+<meta property="og:updated_time" content="2021-01-25T07:54:55.374Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="acacacc" type="application/atom+xml">
@@ -174,14 +174,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-二叉树递归，迭代模板" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-959-由斜杠划分区域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      二叉树递归，迭代模板
+      959-由斜杠划分区域
     </h1>
   
 
@@ -193,8 +193,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/10/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%80%92%E5%BD%92%EF%BC%8C%E8%BF%AD%E4%BB%A3%E6%A8%A1%E6%9D%BF/" class="archive-article-date">
-        <time datetime="2020-10-29T12:14:48.450Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
+<a href="/2021/01/25/959-%E7%94%B1%E6%96%9C%E6%9D%A0%E5%88%92%E5%88%86%E5%8C%BA%E5%9F%9F/" class="archive-article-date">
+        <time datetime="2021-01-25T07:48:15.017Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-25</time>
 </a>
 
   
@@ -207,7 +207,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">367字</span>
+      <span class="post-count">348字</span>
     </span>
   </span>
 
@@ -227,18 +227,12 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>简单记录二叉树</p>
+    <p>做这道题之前可以先看看第200题，这道题多了一个建图的步骤</p>
 <a id="more"></a>
-<p>结构体  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct TreeNode &#123;</span><br><span class="line">    int val;</span><br><span class="line">    TreeNode* left;</span><br><span class="line">    TreeNode* right;</span><br><span class="line">    TreeNode*(int x):val(x),left(nullptr),right(nullptr)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="一丶递归"><a href="#一丶递归" class="headerlink" title="一丶递归"></a>一丶递归</h2><p>递归相对来说比较简单，写在不同的位置对于前中后序  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void order(TreeNode * root)&#123;</span><br><span class="line">    if(root == nullptr)   </span><br><span class="line">        return;</span><br><span class="line">    // 前序</span><br><span class="line">    order(root-&gt;left);</span><br><span class="line">    // 中序</span><br><span class="line">    order(root-&gt;right);</span><br><span class="line">    // 后序</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二丶迭代"><a href="#二丶迭代" class="headerlink" title="二丶迭代"></a>二丶迭代</h2><p>使用迭代，前中序代码基本一致  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; PreOrder(TreeNode *root) &#123;</span><br><span class="line">    vector&lt;int&gt; res;</span><br><span class="line">    if (!root) return res;</span><br><span class="line">    stack&lt;TreeNode *&gt; s;</span><br><span class="line">    while (root || !s.empty()) &#123;</span><br><span class="line">        if (root) &#123;</span><br><span class="line">            s.push(root);</span><br><span class="line">            // res.push_back(root-&gt;val);  // PreOrder</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            root = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            // res.push_back(root-&gt;val);  // InOrder</span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>后序代码略有不同  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; PostOrder(TreeNode *root) &#123;</span><br><span class="line">    vector&lt;int&gt; res;</span><br><span class="line">    if (!root) return res;</span><br><span class="line">    stack&lt;TreeNode *&gt; visit;</span><br><span class="line">    TreeNode *cur = root;</span><br><span class="line">    TreeNode *pre = nullptr;</span><br><span class="line">    while (cur != nullptr || !visit.empty()) &#123;</span><br><span class="line">        while (cur != nullptr) &#123;</span><br><span class="line">            visit.push(cur);</span><br><span class="line">            cur = cur-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        cur = visit.top();</span><br><span class="line">        if (cur-&gt;right == nullptr || cur-&gt;right == pre) &#123;</span><br><span class="line">            visit.pop();</span><br><span class="line">            res.push_back(cur-&gt;val);</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = nullptr;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            cur = cur-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>后序还有另一种写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; PostOrder_2(TreeNode *root) &#123;</span><br><span class="line">    vector&lt;int&gt; res;</span><br><span class="line">    if (!root) return res;</span><br><span class="line">    stack&lt;TreeNode *&gt; s;</span><br><span class="line">    TreeNode *p = root;</span><br><span class="line">    while (p != nullptr || !s.empty()) &#123;</span><br><span class="line">        if (p != nullptr) &#123;</span><br><span class="line">            res.push_back(p-&gt;val); //前序的位置</span><br><span class="line">            s.push(p);</span><br><span class="line">            p = p-&gt;right; //区别在于遍历顺序是 根-右-左</span><br><span class="line">        &#125;</span><br><span class="line">        else if(!s.empty())&#123;</span><br><span class="line">            p = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            p = p-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    reverse(res.begin(),res.end()); //得到 根-右-左, 反转之后得到 左-右-根</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>刚开始看这道题的时候几乎没有思路，看了题解后才知道需要自己将数据转成图来做，这里转成图的方式是扩大三倍，然后将那一斜列三个位置填充1，bfs与并查集的做法都与200题类似</p>
+<h2 id="1-dfs"><a href="#1-dfs" class="headerlink" title="1.dfs"></a>1.dfs</h2><p><a href="https://leetcode-cn.com/problems/regions-cut-by-slashes/">https://leetcode-cn.com/problems/regions-cut-by-slashes/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">int dir[4][2] = &#123; 1,0,-1,0,0,1,0,-1 &#125;;</span><br><span class="line">void dfs(vector&lt;vector&lt;int&gt;&gt;&amp; vis, int x, int y) &#123;</span><br><span class="line">	for (int i = 0; i &lt; 4; ++i) &#123;</span><br><span class="line">		int xx = x + dir[i][0];</span><br><span class="line">		int yy = y + dir[i][1];</span><br><span class="line">		if (xx &gt;= 0 &amp;&amp; xx &lt; vis.size() &amp;&amp; yy &gt;= 0 &amp;&amp; yy &lt; vis[0].size() &amp;&amp; vis[xx][yy] == 0) &#123;</span><br><span class="line">			vis[xx][yy] = 1;</span><br><span class="line">			dfs(vis, xx, yy);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int regionsBySlashes(vector&lt;string&gt;&amp; grid) &#123;</span><br><span class="line">	vector&lt;vector&lt;int&gt;&gt; vis(grid.size() * 3, vector&lt;int&gt;(grid[0].size() * 3, 0));</span><br><span class="line">	for (int i = 0; i &lt; grid.size(); i++) &#123;</span><br><span class="line">		for (int j = 0; j &lt; grid.size(); j++) &#123;</span><br><span class="line">			if (grid[i][j] == &apos;/&apos;)</span><br><span class="line">				vis[i * 3 + 2][j * 3] = vis[i * 3 + 1][j * 3 + 1] = vis[i * 3][j * 3 + 2] = 1;</span><br><span class="line">			else if (grid[i][j] == &apos;\\&apos;)</span><br><span class="line">				vis[i * 3][j * 3] = vis[i * 3 + 1][j * 3 + 1] = vis[i * 3 + 2][j * 3 + 2] = 1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	int cnt = 0;</span><br><span class="line">	for (int i = 0; i &lt; vis.size(); i++) &#123;</span><br><span class="line">		for (int j = 0; j &lt; vis[0].size(); j++) &#123;</span><br><span class="line">			if (vis[i][j] == 0) &#123;</span><br><span class="line">				dfs(vis, i, j);</span><br><span class="line">				cnt++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     
 
     
@@ -252,7 +246,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://acacacc.github.io/2020/10/29/二叉树递归，迭代模板/" title="二叉树递归，迭代模板" target="_blank">https://acacacc.github.io/2020/10/29/二叉树递归，迭代模板/</a>
+          <a href="https://acacacc.github.io/2021/01/25/959-由斜杠划分区域/" title="959-由斜杠划分区域" target="_blank">https://acacacc.github.io/2021/01/25/959-由斜杠划分区域/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -271,11 +265,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模板</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">建图</a>
         		</li>
       		
 		</ul>
@@ -331,7 +329,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2020/10/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%80%92%E5%BD%92%EF%BC%8C%E8%BF%AD%E4%BB%A3%E6%A8%A1%E6%9D%BF/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://acacacc.github.io/2021/01/25/959-%E7%94%B1%E6%96%9C%E6%9D%A0%E5%88%92%E5%88%86%E5%8C%BA%E5%9F%9F/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -346,18 +344,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/11/07/python%E7%88%AC%E8%99%AB%E4%B9%8B%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          python爬虫之模拟登陆
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/31/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91cpp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">命令行编译c++</div>
+    <a href="/2021/01/25/200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">200-岛屿数量</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -384,7 +373,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一丶递归"><span class="toc-number">1.</span> <span class="toc-text">一丶递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二丶迭代"><span class="toc-number">2.</span> <span class="toc-text">二丶迭代</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-dfs"><span class="toc-number">1.</span> <span class="toc-text">1.dfs</span></a></li></ol>
                     </div>
                 </span>
             </div>
